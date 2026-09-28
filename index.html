@@ -423,6 +423,23 @@ h2{font-size:22px;margin:38px 0 14px}
 @media(max-width:480px){.tiles{grid-template-columns:1fr}.tile{min-height:0}.statrow{grid-template-columns:repeat(2,minmax(0,1fr))}.hero h1{font-size:29px}.hero{padding:27px 19px}.page:not(#page-home)>h1{font-size:29px}.pricing-grid .price{font-size:33px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media print{.content{max-width:none;padding:10px}.page{break-before:page}.page:first-child{break-before:auto}.hero{print-color-adjust:exact}}
+
+/* Qualification calculator */
+.roi-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
+.roi-fields label{font-size:13px;font-weight:700;color:var(--muted)}
+.roi-fields input,.roi-fields select{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font:inherit;font-size:16px}
+.roi-fields input:focus,.roi-fields select:focus{outline:2px solid var(--blue);outline-offset:1px}
+.roi-assumptions{font-size:13px;color:var(--muted)}
+.roi-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.roi-results>div{border:1px solid var(--line);border-radius:10px;padding:13px;background:var(--bg)}
+.roi-results span,.roi-results strong{display:block}
+.roi-results span{font-size:12px;color:var(--muted);line-height:1.4}
+.roi-results strong{font-size:21px;line-height:1.25;margin-top:6px;overflow-wrap:anywhere}
+.roi-error{color:var(--red);font-weight:700}
+.roi-error[hidden]{display:none}
+.payment-btn{display:inline-flex;margin-top:16px;font-size:13px;text-align:center}
+.text-nav{padding:0;border:0;background:none;color:var(--blue);font:inherit;text-decoration:underline;cursor:pointer}
+@media(max-width:700px){.roi-fields{grid-template-columns:1fr}.roi-results{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -454,14 +471,15 @@ h2{font-size:22px;margin:38px 0 14px}
 
       <div class="sb-label">On the Phone</div>
       <button class="navlink" data-go="scripts"><span class="nav-ico">7</span> Cold Call Scripts</button>
-      <button class="navlink" data-go="discovery"><span class="nav-ico">8</span> Discovery</button>
+      <button class="navlink" data-go="discovery"><span class="nav-ico">8</span> Qualification &amp; ROI</button>
       <button class="navlink" data-go="objections"><span class="nav-ico">9</span> Objection Handling</button>
       <button class="navlink" data-go="goodappt"><span class="nav-ico">10</span> Good Appointments</button>
       <button class="navlink" data-go="booking"><span class="nav-ico">11</span> Appointment Booking</button>
 
       <div class="sb-label">Every Day</div>
-      <button class="navlink" data-go="expectations"><span class="nav-ico">12</span> Daily Expectations</button>
-      <button class="navlink" data-go="report"><span class="nav-ico">13</span> Daily Activity Report</button>
+      <button class="navlink" data-go="closing"><span class="nav-ico">12</span> Live Demo &amp; Closing</button>
+      <button class="navlink" data-go="expectations"><span class="nav-ico">13</span> Daily Expectations</button>
+      <button class="navlink" data-go="report"><span class="nav-ico">14</span> Daily Activity Report</button>
     </nav>
 
     <div class="sb-foot">
@@ -507,7 +525,7 @@ h2{font-size:22px;margin:38px 0 14px}
 
       <h2 style="margin-top:6px">Your job in one line</h2>
       <div class="note">
-        <p><strong>Cold call businesses, find out if missed calls are costing them customers, and book a 15 minute AI receptionist demo.</strong> You are not closing the sale on the phone. You are creating enough interest to earn the demo.</p>
+        <p><strong>Cold call businesses, find out if missed calls are costing them customers, and book a 15 minute AI receptionist demo.</strong> Qualify the opportunity, share the $397 monthly price, and secure a demo with someone open to moving forward if it fits. If the prospect is ready now, use the live demo path.</p>
       </div>
 
       <h2>All sections</h2>
@@ -519,12 +537,13 @@ h2{font-size:22px;margin:38px 0 14px}
         <button class="tile" data-go="product"><span class="tile-num">05</span><span class="tile-t">AI Receptionist Product</span><span class="tile-d">What it does and what to say about it.</span></button>
         <button class="tile" data-go="pricing"><span class="tile-num">06</span><span class="tile-t">Pricing</span><span class="tile-d">Website, receptionist, and bundle pricing.</span></button>
         <button class="tile" data-go="scripts"><span class="tile-num">07</span><span class="tile-t">Cold Call Scripts</span><span class="tile-d">Three openers built for live calling.</span></button>
-        <button class="tile" data-go="discovery"><span class="tile-num">08</span><span class="tile-t">Discovery</span><span class="tile-d">The four questions that matter.</span></button>
+        <button class="tile" data-go="discovery"><span class="tile-num">08</span><span class="tile-t">Qualification &amp; ROI</span><span class="tile-d">Check fit and work through the numbers together.</span></button>
         <button class="tile" data-go="objections"><span class="tile-num">09</span><span class="tile-t">Objection Handling</span><span class="tile-d">What to say, and when to walk away.</span></button>
         <button class="tile" data-go="goodappt"><span class="tile-num">10</span><span class="tile-t">Good Appointments</span><span class="tile-d">What actually counts as qualified.</span></button>
         <button class="tile" data-go="booking"><span class="tile-num">11</span><span class="tile-t">Appointment Booking</span><span class="tile-d">The booking link and confirmation steps.</span></button>
-        <button class="tile" data-go="expectations"><span class="tile-num">12</span><span class="tile-t">Daily Expectations</span><span class="tile-d">The standard you are held to.</span></button>
-        <button class="tile" data-go="report"><span class="tile-num">13</span><span class="tile-t">Daily Activity Report</span><span class="tile-d">Submit before you finish the day.</span></button>
+        <button class="tile" data-go="closing"><span class="tile-num">12</span><span class="tile-t">Live Demo &amp; Closing</span><span class="tile-d">An optional path when a prospect is ready now.</span></button>
+        <button class="tile" data-go="expectations"><span class="tile-num">13</span><span class="tile-t">Daily Expectations</span><span class="tile-d">The standard you are held to.</span></button>
+        <button class="tile" data-go="report"><span class="tile-num">14</span><span class="tile-t">Daily Activity Report</span><span class="tile-d">Submit before you finish the day.</span></button>
       </div>
 
       <h2>Fast links</h2>
@@ -554,11 +573,11 @@ h2{font-size:22px;margin:38px 0 14px}
 
       <h2>The philosophy</h2>
       <div class="note good">
-        <p>You are not trying to fully sell the AI receptionist on the cold call.</p>
-        <p style="margin-bottom:0">Your job is to identify a possible problem, create interest, and earn a 15 minute custom demo. That is the whole game.</p>
+        <p>Start with a real missed-call problem. Check the buyer, economics, price fit, and willingness to act if the demo works.</p>
+        <p style="margin-bottom:0">Book a custom demo for a qualified prospect. When someone is ready to see it now, use the optional live demo path.</p>
       </div>
 
-      <p>Trying to close on the first call does two bad things. It makes you talk too much, and it burns time you should be spending on the next dial. The demo is where the closing happens, and the team handles that part.</p>
+      <p>Keep the first call conversational and efficient. Share the price before booking, then ask whether they would consider moving forward if the custom demo solves the problem. Do not pressure someone into a calendar slot.</p>
 
       <h2>What you actually own</h2>
       <div class="grid g2">
@@ -568,7 +587,8 @@ h2{font-size:22px;margin:38px 0 14px}
             <li>Reach the owner or the right decision maker.</li>
             <li>Start a natural conversation.</li>
             <li>Find out if missed calls or voicemail may be costing them customers or revenue.</li>
-            <li>Create enough interest to see a custom demo.</li>
+            <li>Work through the missed-call economics together and share the $397 monthly price.</li>
+            <li>Check whether they would consider moving forward if the demo fits.</li>
             <li>Schedule the 15 minute appointment.</li>
             <li>Confirm booked appointments about one hour before the meeting.</li>
             <li>Complete the Daily Activity Report at the end of every working day.</li>
@@ -578,16 +598,15 @@ h2{font-size:22px;margin:38px 0 14px}
         <div class="card">
           <h3 style="margin-top:0">Not your responsibilities</h3>
           <ul style="margin-bottom:0">
-            <li>Closing the sale</li>
+            <li>Building a custom demo</li>
             <li>Researching the business before the demo</li>
-            <li>Building the custom demo</li>
-            <li>Presenting the demo</li>
-            <li>Detailed pricing negotiation</li>
+            <li>Presenting a custom demo</li>
+            <li>Custom pricing or discount approvals</li>
             <li>Technical or integration answers</li>
-            <li>Payment and agreements</li>
+            <li>Changing payment or agreement terms</li>
             <li>Onboarding and implementation</li>
           </ul>
-          <p style="margin:14px 0 0;font-size:14px;color:var(--muted)">If a prospect pushes into any of these, the answer is simple. Tell them it gets covered on the demo and get the time booked.</p>
+          <p style="margin:14px 0 0;font-size:14px;color:var(--muted)">You can show the existing live demo and send a published payment link when appropriate. Hand off custom requirements, uncertain answers, or any request to change terms to the team.</p>
         </div>
       </div>
 
@@ -595,9 +614,10 @@ h2{font-size:22px;margin:38px 0 14px}
       <div class="card">
         <ul style="margin-bottom:0">
           <li><strong>Scripts</strong> for your opener and transitions.</li>
-          <li><strong>Discovery</strong> for the four questions that matter.</li>
+          <li><strong>Qualification &amp; ROI</strong> to check fit and estimate the opportunity together.</li>
           <li><strong>Objection Handling</strong> when they push back.</li>
-          <li><strong>Pricing</strong> if they ask what it costs.</li>
+          <li><strong>Pricing</strong> to share the monthly price and access payment links.</li>
+          <li><strong>Live Demo &amp; Closing</strong> if they are ready to try it now.</li>
           <li><strong>Appointment Booking</strong> to lock the time in while they are still on the phone.</li>
         </ul>
       </div>
@@ -713,17 +733,17 @@ h2{font-size:22px;margin:38px 0 14px}
         <div class="card" style="border-top:4px solid var(--blue)">
           <span class="pill blue">You own this</span>
           <h3>Front end</h3>
-          <p style="margin-bottom:0">Cold Lead &#8594; Cold Call &#8594; Discovery &#8594; Qualified Appointment</p>
+          <p style="margin-bottom:0">Cold Lead &#8594; Cold Call &#8594; Qualification &#8594; Qualified Appointment</p>
         </div>
         <div class="card" style="border-top:4px solid var(--purple)">
           <span class="pill purple">Team owns this</span>
           <h3>Demo and close</h3>
-          <p style="margin-bottom:0">Research, custom demo build, presentation, questions, pricing, and closing.</p>
+          <p style="margin-bottom:0">Research, custom demo build, presentation, detailed questions, and closing when the SDR has not closed live.</p>
         </div>
         <div class="card" style="border-top:4px solid var(--green)">
           <span class="pill green">Team owns this</span>
           <h3>Delivery</h3>
-          <p style="margin-bottom:0">Payment, onboarding, build and configuration, testing, and go live.</p>
+          <p style="margin-bottom:0">Payment verification, onboarding, build and configuration, testing, and go live.</p>
         </div>
       </div>
 
@@ -739,9 +759,9 @@ h2{font-size:22px;margin:38px 0 14px}
           <div class="pstage sdr"><div class="rail"><div class="pdot">3</div><div class="pline"></div></div>
             <div class="pbody"><div class="pt">Conversation With Decision Maker</div><div class="pd">A real conversation, not a pitch at a gatekeeper.</div></div></div>
           <div class="pstage sdr"><div class="rail"><div class="pdot">4</div><div class="pline"></div></div>
-            <div class="pbody"><div class="pt">Discovery</div><div class="pd">Find out what happens when nobody answers the phone.</div></div></div>
+            <div class="pbody"><div class="pt">Qualification</div><div class="pd">Verify the buyer, missed calls, value of a customer, price fit, and readiness to act.</div></div></div>
           <div class="pstage sdr"><div class="rail"><div class="pdot">5</div><div class="pline"></div></div>
-            <div class="pbody"><div class="pt">Interest Identified</div><div class="pd">There is a possible missed call problem and they want to see more.</div></div></div>
+            <div class="pbody"><div class="pt">Interest Identified</div><div class="pd">They agree the problem matters and would consider the $397/month offer if the demo fits.</div></div></div>
           <div class="pstage sdr"><div class="rail"><div class="pdot">6</div><div class="pline"></div></div>
             <div class="pbody"><div class="pt">15 Minute Demo Scheduled</div><div class="pd"><strong>Your finish line.</strong> Booked while they are still on the phone.</div></div></div>
         </div>
@@ -755,7 +775,7 @@ h2{font-size:22px;margin:38px 0 14px}
           <div class="pstage team"><div class="rail"><div class="pdot">9</div><div class="pline"></div></div>
             <div class="pbody"><div class="pt">15 Minute Demo Presented</div><div class="pd">The prospect hears and sees exactly how it would work for them.</div></div></div>
           <div class="pstage team"><div class="rail"><div class="pdot">10</div><div class="pline"></div></div>
-            <div class="pbody"><div class="pt">Questions, Pricing and Fit Discussed</div><div class="pd">All the detailed questions get answered here, not on your call.</div></div></div>
+            <div class="pbody"><div class="pt">Detailed Questions and Fit Discussed</div><div class="pd">The team covers custom workflows and remaining questions. The SDR has already shared the standard price.</div></div></div>
           <div class="pstage team"><div class="rail"><div class="pdot">11</div><div class="pline"></div></div>
             <div class="pbody"><div class="pt">Deal Closed</div><div class="pd">Commission applies when the client closes and the first payment is collected.</div></div></div>
         </div>
@@ -778,7 +798,7 @@ h2{font-size:22px;margin:38px 0 14px}
       <h2>Why your role matters</h2>
       <div class="note">
         <p>Everything in that pipeline starts with you. No cold call means no conversation. No conversation means no demo. No demo means nothing to close, build, or launch.</p>
-        <p style="margin-bottom:0">You are not expected to close the customer on the cold call. You are expected to create enough interest and identify enough of a problem to get them onto the demo.</p>
+        <p style="margin-bottom:0">Qualify the prospect before the team builds a custom demo. If they are ready to try the existing demo now, you may guide that conversation and send the published payment link.</p>
       </div>
       <div class="btnrow">
         <button class="btn" data-go="product">Next: AI Receptionist Product</button>
@@ -858,10 +878,10 @@ h2{font-size:22px;margin:38px 0 14px}
     <section class="page" id="page-pricing">
       <div class="eyebrow">Section 06</div>
       <h1>Pricing</h1>
-      <p class="lead">Three published monthly options. Know the numbers, but keep the cold call focused on booking a qualified conversation.</p>
+      <p class="lead">Share the relevant monthly price before booking. The prospect should know what moving forward would cost.</p>
 
       <div class="note warn">
-        <p style="margin-bottom:0"><strong>On the phone, keep it short.</strong> The website is $297/month, the AI receptionist is $397/month, and both together are $497/month. There is no setup fee, and service is month to month. Discuss the exact fit on the demo.</p>
+        <p style="margin-bottom:0"><strong>On the phone, keep it short.</strong> The website is $297/month, the AI receptionist is $397/month, and both together are $497/month. There is no setup fee, and service is month to month. Ask if that range could work before building a custom demo.</p>
       </div>
 
       <div class="grid g3 pricing-grid">
@@ -876,6 +896,7 @@ h2{font-size:22px;margin:38px 0 14px}
             <li>Ongoing maintenance and minor updates</li>
             <li>No setup fee; month to month</li>
           </ul>
+          <a class="btn payment-btn" href="https://link.fastpaydirect.com/payment-link/6aba461dc0e70c7fefb70ecb" target="_blank" rel="noopener noreferrer">Website payment link &#8599;</a>
         </div>
         <div class="plan feature">
           <span class="pill purple">Bundle · best value</span>
@@ -889,6 +910,7 @@ h2{font-size:22px;margin:38px 0 14px}
             <li>Save $197/month versus buying both separately</li>
             <li>No setup fee; month to month</li>
           </ul>
+          <a class="btn payment-btn" href="https://link.fastpaydirect.com/payment-link/6aba46fbc0e70c7fefb70ed2" target="_blank" rel="noopener noreferrer">Bundle payment link &#8599;</a>
         </div>
         <div class="plan">
           <span class="pill green">AI Receptionist</span>
@@ -902,21 +924,23 @@ h2{font-size:22px;margin:38px 0 14px}
             <li>Keep the business's existing phone number</li>
             <li>No setup fee; month to month</li>
           </ul>
+          <a class="btn payment-btn" href="https://link.fastpaydirect.com/payment-link/6aba44eec0e70c7fefb70eca" target="_blank" rel="noopener noreferrer">AI receptionist payment link &#8599;</a>
         </div>
       </div>
 
       <h2>How to explain the difference</h2>
       <div class="card"><p style="margin-bottom:0"><strong>$297</strong> builds and maintains the website. <strong>$397</strong> answers and books calls. <strong>$497</strong> includes both. If someone needs deep platform integration, custom software, or heavier workflows, let the team scope and quote it on the demo. Do not promise those additions at a standard price.</p></div>
       <div class="note good"><p style="margin-bottom:0"><strong>No usage surprise:</strong> A busy month does not increase the receptionist's monthly price. There is no per call or per minute charge.</p></div>
+      <div class="note"><p style="margin-bottom:0"><strong>Payment links:</strong> Open the matching plan above and send that exact link after the prospect chooses an option. Confirm the plan and amount before they pay. A completed payment still needs team verification and onboarding; do not promise a custom feature or launch date.</p></div>
       <h2>If they push on price</h2>
-      <div class="say">"The AI receptionist is $397 a month, the website is $297, or both together are $497. There is no setup fee. We'd go through which option makes sense on the demo. Would you have about 15 minutes later today or tomorrow morning?"</div>
+      <div class="say">"The AI receptionist is $397 a month, the website is $297, or both together are $497. There is no setup fee. If the demo solves the missed-call problem, would that monthly price be something you'd consider?"</div>
       <div class="btnrow"><button class="btn" data-go="scripts">Next: Cold Call Scripts</button></div>
     </section>
     <!-- ================= SCRIPTS ================= -->
     <section class="page" id="page-scripts">
       <div class="eyebrow">Section 07</div>
       <h1>Cold Call Scripts</h1>
-      <p class="lead">Three openers. Pick the one that fits your rhythm and the list you are calling. All three end the same way, with a 15 minute demo on the calendar.</p>
+      <p class="lead">Three openers. Pick the one that fits your rhythm and the list you are calling. Each leads into qualification, an upfront price conversation, and a custom demo for a prospect who may move forward if it fits.</p>
 
       <div class="note">
         <p style="margin-bottom:0"><strong>These are guides, not lines to recite.</strong> Change the wording, skip questions, and follow the conversation. Sounding natural beats sounding accurate.</p>
@@ -949,7 +973,7 @@ h2{font-size:22px;margin:38px 0 14px}
         </div></div>
 
         <div class="step"><div class="snum">3</div><div class="sbody">
-          <div class="sh">Discovery</div>
+          <div class="sh">Find the missed-call problem</div>
           <p style="font-size:14.5px;color:var(--muted)">One of the biggest areas we usually look at is whether an AI receptionist could help make sure customers are never going to voicemail. Ask naturally:</p>
           <ul class="qlist">
             <li>How often are calls going to voicemail right now?</li>
@@ -966,20 +990,31 @@ h2{font-size:22px;margin:38px 0 14px}
         </div></div>
 
         <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Schedule the demo</div>
+          <div class="sh">Qualify the economics and price</div>
+          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
+          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
+          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
+          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
+          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
+        </div></div>
+
+        <div class="step"><div class="snum">6</div><div class="sbody">
+          <div class="sh">Check intent and schedule</div>
+          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
+          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
           <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
           <div class="cue">If neither works:</div>
           <div class="say alt">"When would you have about 15 minutes?"</div>
           <div class="cue">Once they give a time, book the appointment.</div>
         </div></div>
 
-        <div class="step"><div class="snum">6</div><div class="sbody">
+        <div class="step"><div class="snum">7</div><div class="sbody">
           <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. Just so you know, we'll actually take the time to look at your business and put together the custom demo for you."</div>
-          <div class="say">"If anything comes up and you need to reschedule, that's completely fine. Just let us know. We want to respect your time and our time, so just don't leave us in the dark if something changes. Sound good?"</div>
+          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
-        <div class="step"><div class="snum">7</div><div class="sbody">
+        <div class="step"><div class="snum">8</div><div class="sbody">
           <div class="sh">Booking</div>
           <div class="card" style="margin-bottom:12px">
             <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
@@ -1010,11 +1045,11 @@ h2{font-size:22px;margin:38px 0 14px}
         <div class="step"><div class="snum">2</div><div class="sbody">
           <div class="sh">Explanation</div>
           <div class="say">"We build AI receptionists that answer calls for your business 24/7. They can talk to the customer, answer questions, capture their information, qualify them, and help get them booked so those opportunities aren't just going to voicemail."</div>
-          <div class="cue">Go directly into discovery.</div>
+          <div class="cue">Ask about their missed calls, then qualify the opportunity.</div>
         </div></div>
 
         <div class="step"><div class="snum">3</div><div class="sbody">
-          <div class="sh">Discovery</div>
+          <div class="sh">Find the missed-call problem</div>
           <ul class="qlist">
             <li>How many calls would you say are going to voicemail on a normal day?</li>
             <li>Who normally handles the phones for you?</li>
@@ -1031,20 +1066,31 @@ h2{font-size:22px;margin:38px 0 14px}
         </div></div>
 
         <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Schedule the demo</div>
+          <div class="sh">Qualify the economics and price</div>
+          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
+          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
+          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
+          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
+          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
+        </div></div>
+
+        <div class="step"><div class="snum">6</div><div class="sbody">
+          <div class="sh">Check intent and schedule</div>
+          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
+          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
           <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
           <div class="cue">If neither works:</div>
           <div class="say alt">"When would you have about 15 minutes?"</div>
           <div class="cue">Once they give a time, book the appointment.</div>
         </div></div>
 
-        <div class="step"><div class="snum">6</div><div class="sbody">
+        <div class="step"><div class="snum">7</div><div class="sbody">
           <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. Just so you know, we'll actually take the time to look at your business and put together the custom demo for you."</div>
-          <div class="say">"If anything comes up and you need to reschedule, that's completely fine. Just let us know. We want to respect your time and our time, so just don't leave us in the dark if something changes. Sound good?"</div>
+          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
-        <div class="step"><div class="snum">7</div><div class="sbody">
+        <div class="step"><div class="snum">8</div><div class="sbody">
           <div class="sh">Booking</div>
           <div class="card" style="margin-bottom:12px">
             <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
@@ -1074,7 +1120,7 @@ h2{font-size:22px;margin:38px 0 14px}
         </div></div>
 
         <div class="step"><div class="snum">2</div><div class="sbody">
-          <div class="sh">Discovery</div>
+          <div class="sh">Find the missed-call problem</div>
           <p style="font-size:14.5px;color:var(--muted)">Ask naturally based on their answer:</p>
           <ul class="qlist">
             <li>Roughly how many calls would you say go to voicemail per day?</li>
@@ -1091,24 +1137,35 @@ h2{font-size:22px;margin:38px 0 14px}
 
         <div class="step"><div class="snum">4</div><div class="sbody">
           <div class="sh">Demo offer</div>
-          <div class="say">"What we can do is actually build one around your business so you can see exactly what it would sound like and how it would work for you."</div>
+          <div class="say">"If it looks like a fit, we can build a custom demo around your business so you can hear how it would work for you."</div>
         </div></div>
 
         <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Schedule the demo</div>
+          <div class="sh">Qualify the economics and price</div>
+          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
+          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
+          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
+          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
+          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
+        </div></div>
+
+        <div class="step"><div class="snum">6</div><div class="sbody">
+          <div class="sh">Check intent and schedule</div>
+          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
+          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
           <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
           <div class="cue">If neither works:</div>
           <div class="say alt">"When would you have about 15 minutes?"</div>
           <div class="cue">Once they give a time, book the appointment.</div>
         </div></div>
 
-        <div class="step"><div class="snum">6</div><div class="sbody">
+        <div class="step"><div class="snum">7</div><div class="sbody">
           <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. Just so you know, we'll actually take the time to look at your business and put together the custom demo for you."</div>
-          <div class="say">"If anything comes up and you need to reschedule, that's completely fine. Just let us know. We want to respect your time and our time, so just don't leave us in the dark if something changes. Sound good?"</div>
+          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
-        <div class="step"><div class="snum">7</div><div class="sbody">
+        <div class="step"><div class="snum">8</div><div class="sbody">
           <div class="sh">Booking</div>
           <div class="card" style="margin-bottom:12px">
             <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
@@ -1122,57 +1179,60 @@ h2{font-size:22px;margin:38px 0 14px}
       </div>
 
       <div class="btnrow">
-        <button class="btn ghost" data-go="discovery">Next: Discovery</button>
+        <button class="btn ghost" data-go="discovery">Next: Qualification &amp; ROI</button>
       </div>
     </section>
-    <!-- ================= DISCOVERY ================= -->
+    <!-- ================= QUALIFICATION ================= -->
     <section class="page" id="page-discovery">
       <div class="eyebrow">Section 08</div>
-      <h1>Discovery</h1>
-      <p class="lead">Quick reference. Four questions, asked like a conversation and not an interrogation.</p>
+      <h1>Qualification &amp; ROI</h1>
+      <p class="lead">A custom demo is for a decision maker with a real problem, a plausible return, and a willingness to consider $397/month if the product fits.</p>
+      <div class="note"><p style="margin-bottom:0"><strong>Keep it conversational.</strong> Ask one question, listen, and use their own numbers. A positive estimate alone does not qualify a prospect.</p></div>
 
-      <div class="note">
-        <p style="margin-bottom:0">The purpose of discovery is to find out whether there is a real missed call problem, and to give you context for the rest of the conversation. Nothing more complicated than that.</p>
-      </div>
-
-      <h2>The core questions</h2>
+      <h2>Qualify before you book</h2>
       <div class="grid g2">
-        <div class="card"><span class="pill blue">01</span><h3>How many calls are going to voicemail on a normal day?</h3><p style="margin-bottom:0;color:var(--muted);font-size:14.5px">Gets you a number. Any number above zero is an opening.</p></div>
-        <div class="card"><span class="pill blue">02</span><h3>Who currently handles the phones?</h3><p style="margin-bottom:0;color:var(--muted);font-size:14.5px">Tells you if it is the owner, a small team, or nobody.</p></div>
-        <div class="card"><span class="pill blue">03</span><h3>What happens when nobody is available?</h3><p style="margin-bottom:0;color:var(--muted);font-size:14.5px">This is where they say it out loud themselves.</p></div>
-        <div class="card"><span class="pill blue">04</span><h3>If more of those calls could be captured instead of going to voicemail, would that be helpful?</h3><p style="margin-bottom:0;color:var(--muted);font-size:14.5px">A yes here is your permission to offer the demo.</p></div>
+        <div class="card"><span class="pill blue">1 · Decision maker</span><h3>Can they make or influence this decision?</h3><p>"Would you be the person deciding how calls are handled, or would someone else need to join us?" If someone else decides, include them in the demo.</p></div>
+        <div class="card"><span class="pill blue">2 · Problem</span><h3>Are valuable calls actually being missed?</h3><p>"About how many calls go unanswered or to voicemail in a day or week? What happens to those callers?" Clarify whether they are potential new customers, and whether their team already calls them back successfully. Not every missed call is a lost sale.</p></div>
+        <div class="card"><span class="pill blue">3 · Value</span><h3>What is a new customer worth?</h3><p>"Roughly what does a typical new customer spend?" Use the average first sale unless they give a reliable lifetime value. If uncertain, say the estimate is rough.</p></div>
+        <div class="card"><span class="pill blue">4 · Timing and fit</span><h3>Would they use this if it works?</h3><p>"If we show you it can handle those calls the way you want, is this something you would look to put in place soon?" Learn about any deadline, approval, phone setup, or requirement for the demo.</p></div>
       </div>
 
-      <h2>How to run it</h2>
+      <h2>Work through the numbers together</h2>
+      <div class="card">
+        <p>Confirm missed calls and ticket with them. Enter their numbers below, explain the 20–30% illustrative conversion range, and ask: "Does that estimate sound reasonable for your business?" Let them correct the assumptions.</p>
+        <p style="margin-bottom:0">This estimates a revenue opportunity <em>if</em> the entered missed calls are reachable potential customers and 20–30% become paying customers after recovery. Actual recovery and conversion may be lower. This is gross revenue before service costs, not a guarantee of profit or ROI.</p>
+      </div>
+      <div class="card roi-card" id="roi-calculator">
+        <h3 style="margin-top:0">Missed-call opportunity calculator</h3>
+        <div class="roi-fields">
+          <label>Missed calls <input id="roi-calls" type="number" min="0" step="1" inputmode="numeric" value="2" aria-label="Missed calls"></label>
+          <label>Time period <select id="roi-period" aria-label="Missed calls time period"><option value="day">Per day</option><option value="week">Per week</option><option value="month">Per month</option></select></label>
+          <label>Average first-sale value ($) <input id="roi-ticket" type="number" min="0" step="0.01" inputmode="decimal" value="500" aria-label="Average first-sale value in dollars"></label>
+        </div>
+        <p class="roi-assumptions">Uses 30 days/month or 52 weeks/12 months. Assumes 20–30% of missed calls would become paying customers if recovered; midpoint 25%. AI receptionist price: $397/month.</p>
+        <div class="roi-results" role="status" aria-live="polite">
+          <div><span>Missed calls/month</span><strong id="roi-monthly">60</strong></div>
+          <div><span>Potential customers/month · 20–30%</span><strong id="roi-customers">12–18</strong></div>
+          <div><span>Potential gross revenue/month</span><strong id="roi-revenue">$6,000–$9,000</strong></div>
+          <div><span>Gross revenue relative to $397 fee</span><strong id="roi-multiple">15.1–22.7×</strong></div>
+        </div>
+        <div class="note good"><p id="roi-breakeven" style="margin-bottom:0">At a $500 average sale, one additional customer covers the $397 monthly fee; further sales add gross revenue before service costs.</p></div>
+        <p id="roi-error" class="roi-error" role="alert" hidden>Enter zero or more missed calls and an average sale above $0.</p>
+      </div>
+      <div class="say">"So about [number] calls [period] go unanswered, and a new customer is typically worth $[amount]. Is that right?"</div>
+      <div class="say">"If 20 to 30 percent of those calls became customers, the potential monthly revenue would be around $[low] to $[high]. Does that feel realistic for your business, or should we adjust the assumptions?"</div>
+      <div class="say">"The AI receptionist is $397 a month. Based on your average sale, we'd need [break-even count] additional customer(s) in a month to cover that price. If we could capture more of those calls, would that be helpful?"</div>
+      <div class="cue">If they disagree, listen and revise the estimate. If they cannot supply a credible number, skip the calculation. Never imply every missed call will be recovered or that the revenue is certain.</div>
+
+      <h2>Price and decision check</h2>
+      <div class="say">"The AI receptionist is $397 per month. If our custom demo shows it can handle your calls the way you need, and everything else makes sense, would you be open to moving forward at that price?"</div>
       <div class="grid g2">
-        <div class="card">
-          <h3 style="margin-top:0"><span class="pill green">Do</span></h3>
-          <ul style="margin-bottom:0">
-            <li>Let their answers decide your next question</li>
-            <li>React to what they say like a person would</li>
-            <li>Drop questions that no longer make sense</li>
-            <li>Let silence sit after you ask something</li>
-            <li>Take notes as they talk</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0"><span class="pill red">Do not</span></h3>
-          <ul style="margin-bottom:0">
-            <li>Run all four questions in order like a form</li>
-            <li>Keep asking after they have already shown interest</li>
-            <li>Interrogate someone who is clearly busy</li>
-            <li>Dig for pain that is not there</li>
-            <li>Talk over their answer to get to the next question</li>
-          </ul>
-        </div>
+        <div class="card"><span class="pill green">Book a custom demo</span><p>They are the buyer or will bring the buyer; the problem is real; the monthly price is within reach; they want to solve it; and they would consider moving forward if the demo fits. Agree on a specific time and confirm how they will attend.</p></div>
+        <div class="card"><span class="pill red">Do not book a custom build yet</span><p>They say the price cannot work, have no intent to implement, only want to browse out of curiosity, or cannot include the person who decides. Ask what is holding them back. If interested but unable to schedule, offer the existing live demo without promising a custom build.</p></div>
       </div>
-
-      <div class="note good">
-        <p style="margin-bottom:0">Once you have enough to know there is a possible problem and they are interested, stop discovering and start booking. More questions after that point only creates more chances for them to say no.</p>
-      </div>
-      <div class="btnrow"><button class="btn" data-go="objections">Next: Objection Handling</button></div>
+      <div class="note warn"><p style="margin-bottom:0">A prospect need not commit to buying before seeing the demo. Look for a credible willingness to act <em>if</em> it solves the problem. Record missed-call estimate, ticket value, current handling, decision maker, price response, timing, and any specific requirements in the booking notes.</p></div>
+      <div class="btnrow"><button class="btn" data-go="objections">Next: Objection Handling</button><button class="btn ghost" data-go="closing">Live Demo Path</button></div>
     </section>
-
     <!-- ================= OBJECTIONS ================= -->
     <section class="page" id="page-objections">
       <div class="eyebrow">Section 09</div>
@@ -1213,7 +1273,7 @@ h2{font-size:22px;margin:38px 0 14px}
         <p>If the prospect asks detailed questions about any of these:</p>
         <div class="grid g2" style="gap:0 24px">
           <ul style="margin-bottom:0">
-            <li>Pricing</li>
+            <li>Custom pricing or discounts</li>
             <li>Contracts</li>
             <li>Technical integrations</li>
             <li>CRM integrations</li>
@@ -1227,10 +1287,10 @@ h2{font-size:22px;margin:38px 0 14px}
         </div>
         <hr>
         <p><strong>Do not invent an answer.</strong></p>
-        <p style="margin-bottom:0">Give the simple answer if you know it. Otherwise explain that it gets covered during the 15 minute demo and transition toward scheduling.</p>
+        <p style="margin-bottom:0">Share the published price clearly. If you do not know a custom or technical answer, say the team can cover it on the demo. Never make up an answer or promise an unapproved term.</p>
       </div>
 
-      <div class="say alt">"That's a good question and honestly it's exactly the kind of thing we'd walk through on the demo. Would you have about 15 minutes later today or tomorrow morning?"</div>
+      <div class="say alt">"The AI receptionist is $397 a month. That particular setup question is something our team can check on the demo. If it works for your business, would you be open to moving forward at that price?"</div>
 
       <div class="note stop">
         <p style="margin-bottom:0">Again, do not try to overcome every objection. Only keep going when there is genuine interest or a reasonable opportunity.</p>
@@ -1248,16 +1308,17 @@ h2{font-size:22px;margin:38px 0 14px}
         <h3 style="margin-top:0">A good appointment generally means</h3>
         <div class="checkline"><span class="checkbox"></span><span>The prospect is the owner, decision maker, manager, or someone meaningfully involved in the decision.</span></div>
         <div class="checkline"><span class="checkbox"></span><span>They understand at a basic level what Summit Results Agency does.</span></div>
-        <div class="checkline"><span class="checkbox"></span><span>You have had at least a small discovery conversation.</span></div>
+        <div class="checkline"><span class="checkbox"></span><span>You have discussed missed calls, what happens to them, and an approximate customer value when available.</span></div>
         <div class="checkline"><span class="checkbox"></span><span>There is a possible problem Summit Results Agency could solve.</span></div>
-        <div class="checkline"><span class="checkbox"></span><span>The prospect has genuine interest in seeing the custom demo.</span></div>
+        <div class="checkline"><span class="checkbox"></span><span>They know the AI receptionist is $397/month and could consider that price if the demo fits.</span></div>
+        <div class="checkline"><span class="checkbox"></span><span>They have a reason to act and would consider moving forward if the demo solves their problem.</span></div>
         <div class="checkline"><span class="checkbox"></span><span>The appointment time is legitimate.</span></div>
         <div class="checkline"><span class="checkbox"></span><span>They understand the team will spend time preparing something specifically for their business.</span></div>
         <div class="checkline"><span class="checkbox"></span><span>They have agreed to notify us if they need to reschedule.</span></div>
       </div>
 
       <div class="note">
-        <p style="margin-bottom:0">You are not required to fully close or financially qualify the prospect on the cold call. The purpose is to book a real opportunity, not force a buying decision before the demo.</p>
+        <p style="margin-bottom:0">You do not need a promise to buy before the demo. You do need a real price conversation and an honest indication that they might move forward if the demo works. If they are ready to try it now, use the live demo path.</p>
       </div>
 
       <h2>Why the bar matters</h2>
@@ -1299,11 +1360,13 @@ h2{font-size:22px;margin:38px 0 14px}
         <div class="checkline"><span class="checkbox"></span><span>Confirm the email</span></div>
         <div class="checkline"><span class="checkbox"></span><span>Confirm the meeting date</span></div>
         <div class="checkline"><span class="checkbox"></span><span>Confirm the meeting time</span></div>
+        <div class="checkline"><span class="checkbox"></span><span>Make sure the decision maker will attend, the $397/month price was discussed, and they would consider moving forward if it fits</span></div>
+        <div class="checkline"><span class="checkbox"></span><span>Record missed calls, average sale, current phone handling, timing, and any requirements in the booking notes</span></div>
         <div class="checkline"><span class="checkbox"></span><span>Make sure the meeting is actually booked</span></div>
       </div>
 
       <h2>Setting the expectation</h2>
-      <div class="say">"Perfect. I've got you down for [day/time]. Just so you know, we'll actually take the time to look at your business and put together the custom demo for you."</div>
+      <div class="say">"We'll look at your website and business, prepare a custom demo, and walk you through it at [day/time]. If it solves the problem and the $397 monthly price makes sense, would you be open to moving forward?"</div>
       <div class="say">"If anything comes up and you need to reschedule, that's completely fine. Just let us know. We want to respect your time and our time, so just don't leave us in the dark if something changes. Sound good?"</div>
 
       <h2>Confirming the appointment</h2>
@@ -1315,12 +1378,40 @@ h2{font-size:22px;margin:38px 0 14px}
       <div class="card">
         <p style="margin-bottom:0">Keep the confirmation short and easy to say yes to. Remind them of the time, remind them we built something specifically for their business, and ask them to let us know right away if anything changed.</p>
       </div>
-      <div class="btnrow"><button class="btn" data-go="expectations">Next: Daily Expectations</button></div>
+      <div class="btnrow"><button class="btn" data-go="closing">Next: Live Demo &amp; Closing</button></div>
     </section>
 
     <!-- ================= EXPECTATIONS ================= -->
+    <section class="page" id="page-closing">
+      <div class="eyebrow">Section 12 · Optional</div>
+      <h1>Live Demo &amp; Closing</h1>
+      <p class="lead">Use this path when a prospect is engaged and ready to hear the receptionist now, cannot find a meeting time, or needs to experience the product before deciding. Keep the prospect's consent and the $397/month price clear.</p>
+      <div class="note warn"><p style="margin-bottom:0"><strong>When to use it:</strong> They have a relevant call-handling problem and want to try a demo during this conversation. A live demo can help someone who is unsure about the value. If the price is firmly out of reach or they say they would never implement it, respect that and move on.</p></div>
+      <h2>1 · Set up the live experience</h2>
+      <div class="card">
+        <p>Open the AI receptionist page below. Ask permission to enter their best phone number. Explain that the demo will call them, they can put you on hold, and they should talk to it like a potential customer. Encourage real questions about the business. This is an existing demonstration; the team can build a custom version later if needed.</p>
+        <a class="btn purple" href="https://summitresultsagency.com/ai-receptionist" target="_blank" rel="noopener noreferrer">Open AI Receptionist Demo &#8599;</a>
+        <div class="say" style="margin-top:16px">"I can let you try the AI receptionist right now. If you're comfortable sharing the best number to call, you'll get a demo call. Put me on hold, ask it the questions one of your customers would ask, and tell me how it feels afterward."</div>
+        <div class="cue">The demo may prompt them to book a sales call. Tell them they can skip that prompt because they are already speaking with you. Do not imply the existing demo has been configured for their business.</div>
+      </div>
+      <h2>2 · Debrief and check fit</h2>
+      <div class="say">"What did you think? What would it need to do differently for your business?"</div>
+      <p>Listen to the answer. Explain the relevant standard capabilities you know. For custom routing, scheduling, integrations, or anything uncertain, note the requirement and bring in the team. Do not promise it is already supported.</p>
+      <div class="say">"The AI receptionist is $397 a month. Based on what you heard, if we can configure it for the way your business handles calls, would you want to get started?"</div>
+      <h2>3 · If they choose to move forward</h2>
+      <div class="card">
+        <ol>
+          <li>Confirm which service they want and its published monthly price. The website is $297, AI receptionist $397, or bundle $497; no setup fee, month to month.</li>
+          <li>Open the matching link on the <button class="text-nav" data-go="pricing">Pricing page</button> and send it to them. Ask them to confirm the product and amount on the payment page before paying. Do not enter payment details for them.</li>
+          <li>After they complete it, confirm payment status with the team and hand off business details, requirements, and contact information for onboarding. Do not declare them live or promise a launch date.</li>
+        </ol>
+      </div>
+      <div class="note"><p style="margin-bottom:0"><strong>If they are interested but not ready to pay:</strong> Clarify the specific concern and next step. If a custom workflow needs validation, book a custom demo with the decision maker. If they cannot make the price work or have no intention to proceed, do not create an appointment just to fill the calendar.</p></div>
+      <div class="btnrow"><button class="btn" data-go="pricing">Open Pricing &amp; Payment Links</button><button class="btn ghost" data-go="expectations">Next: Daily Expectations</button></div>
+    </section>
+    <!-- ================= EXPECTATIONS ================= -->
     <section class="page" id="page-expectations">
-      <div class="eyebrow">Section 12</div>
+      <div class="eyebrow">Section 13</div>
       <h1>Daily Expectations</h1>
 
       <div class="hl">
@@ -1378,7 +1469,7 @@ h2{font-size:22px;margin:38px 0 14px}
 
     <!-- ================= REPORT ================= -->
     <section class="page" id="page-report">
-      <div class="eyebrow">Section 13</div>
+      <div class="eyebrow">Section 14</div>
       <h1>Daily Activity Report</h1>
       <p class="lead">Complete this at the end of every working day, before you finish for the day.</p>
 
@@ -1416,7 +1507,7 @@ h2{font-size:22px;margin:38px 0 14px}
 
 <script>
 (function(){
-  var pages = ["home","start","company","opportunity","process","product","pricing","scripts","discovery","objections","goodappt","booking","expectations","report"];
+  var pages = ["home","start","company","opportunity","process","product","pricing","scripts","discovery","objections","goodappt","booking","closing","expectations","report"];
   var sidebar = document.getElementById('sidebar');
   var scrim   = document.getElementById('scrim');
   var burger  = document.getElementById('burger');
@@ -1484,6 +1575,38 @@ h2{font-size:22px;margin:38px 0 14px}
       window.scrollTo(0,0);
     });
   }
+
+
+  // Calculator uses the prospect's own inputs; figures are estimates of gross revenue.
+  var roiCalls = document.getElementById('roi-calls');
+  var roiPeriod = document.getElementById('roi-period');
+  var roiTicket = document.getElementById('roi-ticket');
+  var roiError = document.getElementById('roi-error');
+  var dollars = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  var quantity = new Intl.NumberFormat('en-US',{maximumFractionDigits:1});
+  function setRoi(id,value){ document.getElementById(id).textContent=value; }
+  function updateRoi(){
+    var calls = Number(roiCalls.value), ticket = Number(roiTicket.value);
+    var valid = roiCalls.value !== '' && roiTicket.value !== '' &&
+      Number.isFinite(calls) && Number.isFinite(ticket) && calls >= 0 && ticket > 0;
+    roiError.hidden = valid;
+    if(!valid){
+      ['roi-monthly','roi-customers','roi-revenue','roi-multiple','roi-breakeven'].forEach(function(id){setRoi(id,'—');});
+      return;
+    }
+    var factor = roiPeriod.value === 'day' ? 30 : roiPeriod.value === 'week' ? 52/12 : 1;
+    var monthly = calls * factor;
+    var lowCustomers = monthly * 0.20, highCustomers = monthly * 0.30;
+    var lowRevenue = lowCustomers * ticket, highRevenue = highCustomers * ticket;
+    var breakEven = Math.ceil(397 / ticket);
+    setRoi('roi-monthly',quantity.format(monthly));
+    setRoi('roi-customers',quantity.format(lowCustomers)+'–'+quantity.format(highCustomers));
+    setRoi('roi-revenue',dollars.format(lowRevenue)+'–'+dollars.format(highRevenue));
+    setRoi('roi-multiple',(lowRevenue/397).toFixed(1)+'–'+(highRevenue/397).toFixed(1)+'×');
+    setRoi('roi-breakeven','At a '+dollars.format(ticket)+' average sale, '+breakEven+' additional '+(breakEven===1?'customer':'customers')+' would cover the $397 monthly fee in gross sales. Further sales add gross revenue before service costs.');
+  }
+  [roiCalls,roiPeriod,roiTicket].forEach(function(el){ el.addEventListener('input',updateRoi); el.addEventListener('change',updateRoi); });
+  updateRoi();
 
   show((location.hash||'#home').slice(1), false);
 })();
