@@ -467,22 +467,52 @@ h3{font-size:17px;letter-spacing:-.025em}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media print{.content{max-width:none;padding:10px}.page{break-before:page}.page:first-child{break-before:auto}.hero{print-color-adjust:exact}}
-/* Qualification calculator */
-.roi-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
-.roi-fields label{font-size:13px;font-weight:700;color:var(--muted)}
-.roi-fields input,.roi-fields select{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font:inherit;font-size:16px}
-.roi-fields input:focus,.roi-fields select:focus{outline:2px solid var(--blue);outline-offset:1px}
-.roi-assumptions{font-size:13px;color:var(--muted)}
-.roi-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
-.roi-results>div{border:1px solid var(--line);border-radius:10px;padding:13px;background:var(--bg)}
-.roi-results span,.roi-results strong{display:block}
-.roi-results span{font-size:12px;color:var(--muted);line-height:1.4}
-.roi-results strong{font-size:21px;line-height:1.25;margin-top:6px;overflow-wrap:anywhere}
-.roi-error{color:var(--red);font-weight:700}
-.roi-error[hidden]{display:none}
+/* Revenue opportunity tool */
+.roi-intro{max-width:70ch;color:#566273;font-size:16px;margin-bottom:18px}
+.roi-card{background:#0B1220;border:1px solid #293247;border-radius:16px;overflow:hidden;color:#F5F1E9;margin:0 0 22px;box-shadow:0 20px 40px rgba(11,18,32,.10)}
+.roi-head{padding:29px 32px 16px;display:flex;justify-content:space-between;gap:22px;align-items:start}
+.roi-kicker{display:block;color:#F07A52;font-size:10px;letter-spacing:.2em;font-weight:800;margin-bottom:9px}
+.roi-head h3{font-family:var(--font-display);font-size:clamp(25px,3vw,34px);font-weight:600;letter-spacing:-.035em;line-height:1.12;color:#F5F1E9;margin:0 0 7px}
+.roi-head p{color:#9EA8B7;font-size:14px;margin:0}
+.roi-fee{border:1px solid #354056;border-radius:8px;padding:11px 14px;min-width:132px;text-align:right;white-space:nowrap}
+.roi-fee small{display:block;color:#9EA8B7;font-size:9px;letter-spacing:.13em;font-weight:800}
+.roi-fee strong{font-family:var(--font-display);font-size:25px;font-weight:600;color:#F5F1E9}
+.roi-fee span{font-size:12px;color:#9EA8B7}
+.roi-fields{display:grid;grid-template-columns:1fr .85fr 1.15fr;gap:12px;padding:16px 32px 30px;margin:0}
+.roi-fields label{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#A7B0BF}
+.roi-fields input,.roi-fields select{display:block;width:100%;margin-top:9px;padding:13px 14px;border:1px solid #3A465B;border-radius:7px;background:#1B2639;color:#F5F1E9;font:600 16px var(--font-body);min-height:49px}
+.roi-fields input::placeholder{color:#8F9AAB;opacity:1}
+.roi-fields input:focus,.roi-fields select:focus{outline:2px solid #E2542B;outline-offset:1px}
+.roi-output{background:#131E30;border-top:1px solid #354056;padding:27px 32px 29px}
+.roi-prompt{color:#AAB4C1;font-size:14px;margin:0 0 14px}
+.roi-prompt[hidden],.roi-error[hidden]{display:none}
+.roi-error{color:#FFC4B4;font-size:13px;font-weight:700;margin:0 0 14px}
+.roi-primary{padding:0 0 23px;border-bottom:1px solid #354056}
+.roi-primary span{display:block;color:#F07A52;font-size:10px;letter-spacing:.17em;font-weight:800}
+.roi-primary strong{display:block;color:#F5F1E9;font-family:var(--font-display);font-size:clamp(37px,4.5vw,54px);font-weight:600;letter-spacing:-.045em;line-height:1.18;margin:6px 0}
+.roi-primary small{font-size:12px;color:#9EA8B7}
+.roi-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;padding:22px 0}
+.roi-results>div{padding:0 18px;border:0;border-right:1px solid #354056;border-radius:0;background:transparent}
+.roi-results>div:first-child{padding-left:0}
+.roi-results>div:last-child{border-right:0;padding-right:0}
+.roi-results span{display:block;color:#9EA8B7;font-size:12px;line-height:1.4}
+.roi-results strong{display:block;color:#F5F1E9;font-family:var(--font-display);font-size:25px;font-weight:600;line-height:1.25;margin-top:7px;overflow-wrap:anywhere}
+.roi-break{background:#223348;border-left:3px solid #E2542B;border-radius:0 7px 7px 0;padding:14px 17px}
+.roi-break span{display:block;color:#F07A52;font-size:10px;letter-spacing:.16em;font-weight:800;margin-bottom:5px}
+.roi-break p{color:#EBEDF0;font-size:14px;line-height:1.55;margin:0}
+.roi-foot{padding:16px 32px 20px;color:#9EA8B7;font-size:11.5px;line-height:1.6;border-top:1px solid #293247}
 .payment-btn{display:inline-flex;margin-top:16px;font-size:13px;text-align:center}
 .text-nav{padding:0;border:0;background:none;color:var(--blue);font:inherit;text-decoration:underline;cursor:pointer}
-@media(max-width:700px){.roi-fields{grid-template-columns:1fr}.roi-results{grid-template-columns:1fr}}
+@media(max-width:700px){
+ .roi-head{padding:23px 20px 11px;flex-direction:column}
+ .roi-fee{text-align:left}
+ .roi-fields{grid-template-columns:1fr;padding:12px 20px 24px}
+ .roi-output{padding:23px 20px}
+ .roi-results{grid-template-columns:1fr;gap:16px}
+ .roi-results>div,.roi-results>div:first-child,.roi-results>div:last-child{padding:0 0 15px;border-right:0;border-bottom:1px solid #354056}
+ .roi-results>div:last-child{border-bottom:0;padding-bottom:0}
+ .roi-foot{padding:15px 20px}
+}
 </style>
 </head>
 <body>
@@ -984,7 +1014,7 @@ h3{font-size:17px;letter-spacing:-.025em}
     <section class="page" id="page-scripts">
       <div class="eyebrow">Section 07</div>
       <h1>Cold Call Scripts</h1>
-      <p class="lead">Three openers. Pick the one that fits your rhythm and the list you are calling. Each leads into qualification, an upfront price conversation, and a custom demo for a prospect who may move forward if it fits.</p>
+      <p class="lead">Three openers. After the opener, ask about missed calls, explain the receptionist and listen, then work through the ticket value and price before offering a custom demo.</p>
 
       <div class="note">
         <p style="margin-bottom:0"><strong>These are guides, not lines to recite.</strong> Change the wording, skip questions, and follow the conversation. Sounding natural beats sounding accurate.</p>
@@ -999,7 +1029,6 @@ h3{font-size:17px;letter-spacing:-.025em}
       <!-- SCRIPT 1 -->
       <div class="tabpane active" id="tab-s1">
         <h2 style="margin-top:0">Script 1: Free AI Audit</h2>
-
         <div class="step"><div class="snum">1</div><div class="sbody">
           <div class="sh">Opening</div>
           <div class="cue">If needed:</div>
@@ -1008,73 +1037,66 @@ h3{font-size:17px;letter-spacing:-.025em}
           <div class="say">"Hey, this is [Name] with Summit Results Agency. Would you happen to be the owner?"</div>
           <div class="cue">If yes:</div>
           <div class="say">"Perfect. I'll be quick. Again, this is [Name] with Summit Results Agency. Not sure if you've heard our name before, but we're working with [industry] businesses in [area], and right now we're offering free AI audits to see how AI could actually help your business."</div>
-          <div class="cue stopcue">Stop talking and let them respond.</div>
+          <div class="cue stopcue">Stop talking and let them respond. If they ask what the audit means: "We look at where calls may be slipping through and whether an AI receptionist could help."</div>
         </div></div>
-
         <div class="step"><div class="snum">2</div><div class="sbody">
-          <div class="sh">If they ask what you mean</div>
-          <div class="say">"Basically, we take a look at how your business is operating now, find areas where AI could actually help, and then put together a custom demo so you can see what that would look like for your business."</div>
+          <div class="sh">Ask about their calls</div>
+          <div class="cue">Ask these naturally and listen after each answer. Get the missed-call number in the period they know best.</div>
+          <div class="say">"About how many calls go unanswered or to voicemail on a normal day or week?"</div>
+          <div class="say">"Who normally handles the phone for you?"</div>
+          <div class="say">"What happens to those callers when nobody can pick up?"</div>
+          <div class="cue">If they say none are missed, explore whether after-hours calls or busy periods are different. Do not invent a problem.</div>
         </div></div>
 
         <div class="step"><div class="snum">3</div><div class="sbody">
-          <div class="sh">Find the missed-call problem</div>
-          <p style="font-size:14.5px;color:var(--muted)">One of the biggest areas we usually look at is whether an AI receptionist could help make sure customers are never going to voicemail. Ask naturally:</p>
-          <ul class="qlist">
-            <li>How often are calls going to voicemail right now?</li>
-            <li>Roughly how many calls would you say go to voicemail per day?</li>
-            <li>Who normally handles the phones for you?</li>
-            <li>If you were able to capture more of those calls instead of letting them go to voicemail, would that be helpful?</li>
-          </ul>
-          <div class="cue">Do not force every question. Build the conversation around what they tell you.</div>
+          <div class="sh">Explain it, then listen</div>
+          <div class="say">"That's why I reached out. We build AI receptionists that answer when your team can't. It can talk to callers, answer common questions, collect their details, and help book appointments, so those calls don't just go to voicemail."</div>
+          <div class="say alt">"How does that sound for your business?"</div>
+          <div class="cue stopcue">Stop and let them respond. Address what they actually say before moving into the numbers. If they are not interested, do not force the rest of the script.</div>
         </div></div>
 
         <div class="step"><div class="snum">4</div><div class="sbody">
-          <div class="sh">Transition</div>
-          <div class="say">"Got it. That's definitely something we could look at for you. We can build a custom demo around your business and show you how the AI could answer those calls, talk to the customer, qualify them, and help get them booked."</div>
-        </div></div>
-
-        <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Qualify the economics and price</div>
-          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
-          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
-          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
-          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
-          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <div class="sh">Ask the ticket, then calculate together</div>
+          <div class="say">"Roughly what does an average new customer spend with you?"</div>
+          <div class="cue">Wait for their answer. Use the missed-call number they already gave you. Confirm it once, then enter both numbers in the calculator.</div>
+          <div class="say">"You mentioned about [number] missed calls [day/week/month], and a new customer is worth about $[amount]. Did I get that right?"</div>
+          <div class="say">"If even 20 to 30 percent of those calls became customers, that could be roughly $[low] to $[high] in gross sales a month. Does that seem realistic for your business?"</div>
+          <div class="cue">Let them agree or correct the assumptions. This is a possible opportunity, not guaranteed revenue. If they cannot give credible numbers, skip the math.</div>
+          <div class="say">"The AI receptionist is $397 a month. At your average ticket, [break-even count] extra customer(s) would cover that monthly price in gross sales. Would capturing more of those calls be useful?"</div>
+          <div class="cue">If they ask about price earlier, answer right away. Do not wait until this step.</div>
           <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
         </div></div>
 
+        <div class="step"><div class="snum">5</div><div class="sbody">
+          <div class="sh">Offer the custom demo and check intent</div>
+          <div class="say">"If this looks useful, our team can look at your website and business, set up a custom demo, and show you exactly how it would handle your calls."</div>
+          <div class="say">"If it does what you need and the pricing makes sense, would you be open to moving forward?"</div>
+          <div class="cue stopcue">Pause. An honest "yes, if it works" is enough. If they cannot consider the price or have no intention to implement, do not book a custom build just for curiosity. Clarify the concern or offer the live demo if appropriate.</div>
+        </div></div>
+
         <div class="step"><div class="snum">6</div><div class="sbody">
-          <div class="sh">Check intent and schedule</div>
-          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
-          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
-          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
-          <div class="cue">If neither works:</div>
-          <div class="say alt">"When would you have about 15 minutes?"</div>
-          <div class="cue">Once they give a time, book the appointment.</div>
+          <div class="sh">Book and set expectations</div>
+          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to see it?"</div>
+          <div class="cue">If neither works, ask: "When would you have about 15 minutes?"</div>
+          <div class="say">"Perfect, I've got you down for [day/time]. We'll prepare this around your business. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
         <div class="step"><div class="snum">7</div><div class="sbody">
-          <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
-        </div></div>
-
-        <div class="step"><div class="snum">8</div><div class="sbody">
-          <div class="sh">Booking</div>
+          <div class="sh">Finish the booking</div>
           <div class="card" style="margin-bottom:12px">
-            <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Best phone number</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Email</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Name and decision maker</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Best phone number and email</span></div>
             <div class="checkline"><span class="checkbox"></span><span>Confirm date and time</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Record missed calls, average ticket, price response, and requirements</span></div>
           </div>
-          <div class="cue stopcue">Book the appointment while still on the phone.</div>
+          <div class="cue stopcue">Book while they are still on the phone.</div>
           <a class="btn purple" href="https://cal.com/summit-results/ai-receptionist-website" target="_blank" rel="noopener">Open Booking Link &#8599;</a>
         </div></div>
       </div>
 
-      <!-- SCRIPT 2 -->
+            <!-- SCRIPT 2 -->
       <div class="tabpane" id="tab-s2">
         <h2 style="margin-top:0">Script 2: Permission Based</h2>
-
         <div class="step"><div class="snum">1</div><div class="sbody">
           <div class="sh">Opening</div>
           <div class="cue">If needed:</div>
@@ -1085,72 +1107,64 @@ h3{font-size:17px;letter-spacing:-.025em}
           <div class="say">"Perfect. I'll be quick. We're working with [industry] businesses in [area], and what we do is help businesses avoid losing jobs from missed calls. Do you have 30 seconds?"</div>
           <div class="cue stopcue">Stop talking. If yes, continue.</div>
         </div></div>
-
         <div class="step"><div class="snum">2</div><div class="sbody">
-          <div class="sh">Explanation</div>
-          <div class="say">"We build AI receptionists that answer calls for your business 24/7. They can talk to the customer, answer questions, capture their information, qualify them, and help get them booked so those opportunities aren't just going to voicemail."</div>
-          <div class="cue">Ask about their missed calls, then qualify the opportunity.</div>
+          <div class="sh">Ask about their calls</div>
+          <div class="cue">Ask these naturally and listen after each answer. Get the missed-call number in the period they know best.</div>
+          <div class="say">"About how many calls go unanswered or to voicemail on a normal day or week?"</div>
+          <div class="say">"Who normally handles the phone for you?"</div>
+          <div class="say">"What happens to those callers when nobody can pick up?"</div>
+          <div class="cue">If they say none are missed, explore whether after-hours calls or busy periods are different. Do not invent a problem.</div>
         </div></div>
 
         <div class="step"><div class="snum">3</div><div class="sbody">
-          <div class="sh">Find the missed-call problem</div>
-          <ul class="qlist">
-            <li>How many calls would you say are going to voicemail on a normal day?</li>
-            <li>Who normally handles the phones for you?</li>
-            <li>What usually happens when nobody is available to answer?</li>
-            <li>If you could capture more of those calls instead of losing them to voicemail, would that be helpful?</li>
-          </ul>
-          <div class="cue">Do not treat this like a checklist. Have a conversation.</div>
+          <div class="sh">Explain it, then listen</div>
+          <div class="say">"That's why I reached out. We build AI receptionists that answer when your team can't. It can talk to callers, answer common questions, collect their details, and help book appointments, so those calls don't just go to voicemail."</div>
+          <div class="say alt">"How does that sound for your business?"</div>
+          <div class="cue stopcue">Stop and let them respond. Address what they actually say before moving into the numbers. If they are not interested, do not force the rest of the script.</div>
         </div></div>
 
         <div class="step"><div class="snum">4</div><div class="sbody">
-          <div class="sh">Transition</div>
-          <div class="say">"Got it. Based on what you're telling me, I think it'd be worth at least showing you what this could look like for your business."</div>
-          <div class="say">"We'll actually build a custom demo around your business so you can hear how it sounds and see how it would work."</div>
-        </div></div>
-
-        <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Qualify the economics and price</div>
-          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
-          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
-          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
-          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
-          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <div class="sh">Ask the ticket, then calculate together</div>
+          <div class="say">"Roughly what does an average new customer spend with you?"</div>
+          <div class="cue">Wait for their answer. Use the missed-call number they already gave you. Confirm it once, then enter both numbers in the calculator.</div>
+          <div class="say">"You mentioned about [number] missed calls [day/week/month], and a new customer is worth about $[amount]. Did I get that right?"</div>
+          <div class="say">"If even 20 to 30 percent of those calls became customers, that could be roughly $[low] to $[high] in gross sales a month. Does that seem realistic for your business?"</div>
+          <div class="cue">Let them agree or correct the assumptions. This is a possible opportunity, not guaranteed revenue. If they cannot give credible numbers, skip the math.</div>
+          <div class="say">"The AI receptionist is $397 a month. At your average ticket, [break-even count] extra customer(s) would cover that monthly price in gross sales. Would capturing more of those calls be useful?"</div>
+          <div class="cue">If they ask about price earlier, answer right away. Do not wait until this step.</div>
           <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
         </div></div>
 
+        <div class="step"><div class="snum">5</div><div class="sbody">
+          <div class="sh">Offer the custom demo and check intent</div>
+          <div class="say">"If this looks useful, our team can look at your website and business, set up a custom demo, and show you exactly how it would handle your calls."</div>
+          <div class="say">"If it does what you need and the pricing makes sense, would you be open to moving forward?"</div>
+          <div class="cue stopcue">Pause. An honest "yes, if it works" is enough. If they cannot consider the price or have no intention to implement, do not book a custom build just for curiosity. Clarify the concern or offer the live demo if appropriate.</div>
+        </div></div>
+
         <div class="step"><div class="snum">6</div><div class="sbody">
-          <div class="sh">Check intent and schedule</div>
-          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
-          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
-          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
-          <div class="cue">If neither works:</div>
-          <div class="say alt">"When would you have about 15 minutes?"</div>
-          <div class="cue">Once they give a time, book the appointment.</div>
+          <div class="sh">Book and set expectations</div>
+          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to see it?"</div>
+          <div class="cue">If neither works, ask: "When would you have about 15 minutes?"</div>
+          <div class="say">"Perfect, I've got you down for [day/time]. We'll prepare this around your business. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
         <div class="step"><div class="snum">7</div><div class="sbody">
-          <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
-        </div></div>
-
-        <div class="step"><div class="snum">8</div><div class="sbody">
-          <div class="sh">Booking</div>
+          <div class="sh">Finish the booking</div>
           <div class="card" style="margin-bottom:12px">
-            <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Best phone number</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Email</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Name and decision maker</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Best phone number and email</span></div>
             <div class="checkline"><span class="checkbox"></span><span>Confirm date and time</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Record missed calls, average ticket, price response, and requirements</span></div>
           </div>
-          <div class="cue stopcue">Book the appointment while still on the phone.</div>
+          <div class="cue stopcue">Book while they are still on the phone.</div>
           <a class="btn purple" href="https://cal.com/summit-results/ai-receptionist-website" target="_blank" rel="noopener">Open Booking Link &#8599;</a>
         </div></div>
       </div>
 
-      <!-- SCRIPT 3 -->
+            <!-- SCRIPT 3 -->
       <div class="tabpane" id="tab-s3">
         <h2 style="margin-top:0">Script 3: Missed Calls</h2>
-
         <div class="step"><div class="snum">1</div><div class="sbody">
           <div class="sh">Opening</div>
           <div class="cue">If needed:</div>
@@ -1159,70 +1173,65 @@ h3{font-size:17px;letter-spacing:-.025em}
           <div class="say">"Hey, this is [Name] with Summit Results Agency. Would you happen to be the owner?"</div>
           <div class="cue">If yes:</div>
           <div class="say">"Perfect. I'll be quick. Again, this is [Name] with Summit Results Agency. We're helping [industry] businesses in [area] make sure none of their customers are ever going to voicemail."</div>
-          <div class="say">"Quick question, when you're busy or on a job and a call comes in, does it ever go to voicemail?"</div>
+          <div class="say">"Mind if I ask a couple of quick questions about how you handle calls?"</div>
           <div class="cue stopcue">Listen.</div>
         </div></div>
-
         <div class="step"><div class="snum">2</div><div class="sbody">
-          <div class="sh">Find the missed-call problem</div>
-          <p style="font-size:14.5px;color:var(--muted)">Ask naturally based on their answer:</p>
-          <ul class="qlist">
-            <li>Roughly how many calls would you say go to voicemail per day?</li>
-            <li>Who normally handles the phones for you?</li>
-            <li>What happens when nobody can get to the phone?</li>
-            <li>If you were able to capture more of those calls instead of letting them go to voicemail, would that be helpful?</li>
-          </ul>
+          <div class="sh">Ask about their calls</div>
+          <div class="cue">Ask these naturally and listen after each answer. Get the missed-call number in the period they know best.</div>
+          <div class="say">"About how many calls go unanswered or to voicemail on a normal day or week?"</div>
+          <div class="say">"Who normally handles the phone for you?"</div>
+          <div class="say">"What happens to those callers when nobody can pick up?"</div>
+          <div class="cue">If they say none are missed, explore whether after-hours calls or busy periods are different. Do not invent a problem.</div>
         </div></div>
 
         <div class="step"><div class="snum">3</div><div class="sbody">
-          <div class="sh">Explanation</div>
-          <div class="say">"That's exactly why I reached out. We build custom AI receptionists that can answer those calls 24/7, talk to the customer, answer questions, capture their information, qualify them, and help get them booked."</div>
+          <div class="sh">Explain it, then listen</div>
+          <div class="say">"That's why I reached out. We build AI receptionists that answer when your team can't. It can talk to callers, answer common questions, collect their details, and help book appointments, so those calls don't just go to voicemail."</div>
+          <div class="say alt">"How does that sound for your business?"</div>
+          <div class="cue stopcue">Stop and let them respond. Address what they actually say before moving into the numbers. If they are not interested, do not force the rest of the script.</div>
         </div></div>
 
         <div class="step"><div class="snum">4</div><div class="sbody">
-          <div class="sh">Demo offer</div>
-          <div class="say">"If it looks like a fit, we can build a custom demo around your business so you can hear how it would work for you."</div>
-        </div></div>
-
-        <div class="step"><div class="snum">5</div><div class="sbody">
-          <div class="sh">Qualify the economics and price</div>
-          <div class="cue">Ask how many calls are missed and the approximate value of a new customer. If they know, open the calculator with them. Confirm each input and ask whether the estimate sounds reasonable. Do not present projected revenue as guaranteed.</div>
-          <div class="say">"So you're missing about [number] calls [day/week/month], and a typical new customer is worth around $[amount], right?"</div>
-          <div class="say">"Using a 20 to 30 percent estimate for calls that could become customers, that puts the possible monthly revenue at roughly $[low] to $[high]. Does that sound like a fair way to look at it?"</div>
-          <div class="say">"Our AI receptionist is $397 per month. Based on your average sale, [break-even count] additional customer(s) in a month would cover that price. Would recovering more of those calls be useful to you?"</div>
-          <div class="cue">If they asked about price earlier, answer immediately and refer back to it here. If they cannot estimate calls or ticket, share the price and assess fit without inventing numbers.</div>
+          <div class="sh">Ask the ticket, then calculate together</div>
+          <div class="say">"Roughly what does an average new customer spend with you?"</div>
+          <div class="cue">Wait for their answer. Use the missed-call number they already gave you. Confirm it once, then enter both numbers in the calculator.</div>
+          <div class="say">"You mentioned about [number] missed calls [day/week/month], and a new customer is worth about $[amount]. Did I get that right?"</div>
+          <div class="say">"If even 20 to 30 percent of those calls became customers, that could be roughly $[low] to $[high] in gross sales a month. Does that seem realistic for your business?"</div>
+          <div class="cue">Let them agree or correct the assumptions. This is a possible opportunity, not guaranteed revenue. If they cannot give credible numbers, skip the math.</div>
+          <div class="say">"The AI receptionist is $397 a month. At your average ticket, [break-even count] extra customer(s) would cover that monthly price in gross sales. Would capturing more of those calls be useful?"</div>
+          <div class="cue">If they ask about price earlier, answer right away. Do not wait until this step.</div>
           <button class="btn ghost" data-go="discovery">Open Qualification &amp; ROI Calculator</button>
         </div></div>
 
+        <div class="step"><div class="snum">5</div><div class="sbody">
+          <div class="sh">Offer the custom demo and check intent</div>
+          <div class="say">"If this looks useful, our team can look at your website and business, set up a custom demo, and show you exactly how it would handle your calls."</div>
+          <div class="say">"If it does what you need and the pricing makes sense, would you be open to moving forward?"</div>
+          <div class="cue stopcue">Pause. An honest "yes, if it works" is enough. If they cannot consider the price or have no intention to implement, do not book a custom build just for curiosity. Clarify the concern or offer the live demo if appropriate.</div>
+        </div></div>
+
         <div class="step"><div class="snum">6</div><div class="sbody">
-          <div class="sh">Check intent and schedule</div>
-          <div class="say">"We'll look at your website and business, set up a custom demo, and show you how it would work on a call. If it does what you need and the $397 monthly price makes sense, would you be open to moving forward?"</div>
-          <div class="cue">Pause for an honest answer. If they cannot consider the price or have no intention of moving forward, do not book a custom build just for curiosity. Explore the reason or use the live demo path if appropriate.</div>
-          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to take a look at it?"</div>
-          <div class="cue">If neither works:</div>
-          <div class="say alt">"When would you have about 15 minutes?"</div>
-          <div class="cue">Once they give a time, book the appointment.</div>
+          <div class="sh">Book and set expectations</div>
+          <div class="say alt">"Would you have about 15 minutes later today or tomorrow morning to see it?"</div>
+          <div class="cue">If neither works, ask: "When would you have about 15 minutes?"</div>
+          <div class="say">"Perfect, I've got you down for [day/time]. We'll prepare this around your business. If anything changes, please let us know so we can reschedule. Sound good?"</div>
         </div></div>
 
         <div class="step"><div class="snum">7</div><div class="sbody">
-          <div class="sh">Set expectations</div>
-          <div class="say">"Perfect. I've got you down for [day/time]. If anything changes, please let us know so we can reschedule. Sound good?"</div>
-        </div></div>
-
-        <div class="step"><div class="snum">8</div><div class="sbody">
-          <div class="sh">Booking</div>
+          <div class="sh">Finish the booking</div>
           <div class="card" style="margin-bottom:12px">
-            <div class="checkline"><span class="checkbox"></span><span>Name</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Best phone number</span></div>
-            <div class="checkline"><span class="checkbox"></span><span>Email</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Name and decision maker</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Best phone number and email</span></div>
             <div class="checkline"><span class="checkbox"></span><span>Confirm date and time</span></div>
+            <div class="checkline"><span class="checkbox"></span><span>Record missed calls, average ticket, price response, and requirements</span></div>
           </div>
-          <div class="cue stopcue">Book the appointment while still on the phone.</div>
+          <div class="cue stopcue">Book while they are still on the phone.</div>
           <a class="btn purple" href="https://cal.com/summit-results/ai-receptionist-website" target="_blank" rel="noopener">Open Booking Link &#8599;</a>
         </div></div>
       </div>
 
-      <div class="btnrow">
+            <div class="btnrow">
         <button class="btn ghost" data-go="discovery">Next: Qualification &amp; ROI</button>
       </div>
     </section>
@@ -1242,26 +1251,29 @@ h3{font-size:17px;letter-spacing:-.025em}
       </div>
 
       <h2>Work through the numbers together</h2>
-      <div class="card">
-        <p>Confirm missed calls and ticket with them. Enter their numbers below, explain the 20–30% illustrative conversion range, and ask: "Does that estimate sound reasonable for your business?" Let them correct the assumptions.</p>
-        <p style="margin-bottom:0">This estimates a revenue opportunity <em>if</em> the entered missed calls are reachable potential customers and 20–30% become paying customers after recovery. Actual recovery and conversion may be lower. This is gross revenue before service costs, not a guarantee of profit or ROI.</p>
-      </div>
-      <div class="card roi-card" id="roi-calculator">
-        <h3 style="margin-top:0">Missed-call opportunity calculator</h3>
+      <p class="roi-intro">Ask for their average ticket after they react to the receptionist. Use the missed-call number they already gave you, then talk through the estimate together. Let them correct any assumption that feels off.</p>
+      <div class="roi-card" id="roi-calculator">
+        <div class="roi-head">
+          <div><span class="roi-kicker">LIVE CALL TOOL</span><h3>What could those calls be worth?</h3><p>Use their numbers. The result updates as you talk.</p></div>
+          <div class="roi-fee"><small>AI RECEPTIONIST</small><strong>$397</strong><span>/ month</span></div>
+        </div>
         <div class="roi-fields">
-          <label>Missed calls <input id="roi-calls" type="number" min="0" step="1" inputmode="numeric" value="2" aria-label="Missed calls"></label>
+          <label>Missed calls <input id="roi-calls" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 2" aria-label="Missed calls"></label>
           <label>Time period <select id="roi-period" aria-label="Missed calls time period"><option value="day">Per day</option><option value="week">Per week</option><option value="month">Per month</option></select></label>
-          <label>Average first-sale value ($) <input id="roi-ticket" type="number" min="0" step="0.01" inputmode="decimal" value="500" aria-label="Average first-sale value in dollars"></label>
+          <label>Average new customer ($) <input id="roi-ticket" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 500" aria-label="Average new customer value in dollars"></label>
         </div>
-        <p class="roi-assumptions">Uses 30 days/month or 52 weeks/12 months. Assumes 20–30% of missed calls would become paying customers if recovered; midpoint 25%. AI receptionist price: $397/month.</p>
-        <div class="roi-results" role="status" aria-live="polite">
-          <div><span>Missed calls/month</span><strong id="roi-monthly">60</strong></div>
-          <div><span>Potential customers/month · 20–30%</span><strong id="roi-customers">12–18</strong></div>
-          <div><span>Potential gross revenue/month</span><strong id="roi-revenue">$6,000–$9,000</strong></div>
-          <div><span>Gross revenue relative to $397 fee</span><strong id="roi-multiple">15.1–22.7×</strong></div>
+        <div class="roi-output">
+          <p id="roi-prompt" class="roi-prompt">Enter the prospect's missed calls and average ticket to see the monthly opportunity.</p>
+          <p id="roi-error" class="roi-error" role="alert" hidden>Enter a missed-call count of zero or more and an average ticket above $0.</p>
+          <div class="roi-primary" role="status" aria-live="polite"><span>POTENTIAL GROSS SALES / MONTH</span><strong id="roi-revenue">—</strong><small>At an illustrative 20–30% call-to-customer rate</small></div>
+          <div class="roi-results">
+            <div><span>Missed calls / month</span><strong id="roi-monthly">—</strong></div>
+            <div><span>Possible customers</span><strong id="roi-customers">—</strong></div>
+            <div><span>Gross sales vs. monthly fee</span><strong id="roi-multiple">—</strong></div>
+          </div>
+          <div class="roi-break"><span>BREAK EVEN</span><p id="roi-breakeven">—</p></div>
         </div>
-        <div class="note good"><p id="roi-breakeven" style="margin-bottom:0">At a $500 average sale, one additional customer covers the $397 monthly fee; further sales add gross revenue before service costs.</p></div>
-        <p id="roi-error" class="roi-error" role="alert" hidden>Enter zero or more missed calls and an average sale above $0.</p>
+        <div class="roi-foot">30 days/month or 52 weeks/12 months. The 20–30% rate is an illustration, not a known conversion rate for this prospect. Actual recovery may be lower. Figures are gross sales before service costs, not guaranteed profit or ROI. Revenue multiple bounds are rounded to whole numbers.</div>
       </div>
       <div class="say">"So about [number] calls [period] go unanswered, and a new customer is typically worth $[amount]. Is that right?"</div>
       <div class="say">"If 20 to 30 percent of those calls became customers, the potential monthly revenue would be around $[low] to $[high]. Does that feel realistic for your business, or should we adjust the assumptions?"</div>
@@ -1269,7 +1281,7 @@ h3{font-size:17px;letter-spacing:-.025em}
       <div class="cue">If they disagree, listen and revise the estimate. If they cannot supply a credible number, skip the calculation. Never imply every missed call will be recovered or that the revenue is certain.</div>
 
       <h2>Price and decision check</h2>
-      <div class="say">"The AI receptionist is $397 per month. If our custom demo shows it can handle your calls the way you need, and everything else makes sense, would you be open to moving forward at that price?"</div>
+      <div class="say">"If our custom demo shows it can handle your calls the way you need and the pricing makes sense, would you be open to moving forward?"</div>
       <div class="grid g2">
         <div class="card"><span class="pill green">Book a custom demo</span><p>They are the buyer or will bring the buyer; the problem is real; the monthly price is within reach; they want to solve it; and they would consider moving forward if the demo fits. Agree on a specific time and confirm how they will attend.</p></div>
         <div class="card"><span class="pill red">Do not book a custom build yet</span><p>They say the price cannot work, have no intent to implement, only want to browse out of curiosity, or cannot include the person who decides. Ask what is holding them back. If interested but unable to schedule, offer the existing live demo without promising a custom build.</p></div>
@@ -1410,7 +1422,7 @@ h3{font-size:17px;letter-spacing:-.025em}
       </div>
 
       <h2>Setting the expectation</h2>
-      <div class="say">"We'll look at your website and business, prepare a custom demo, and walk you through it at [day/time]. If it solves the problem and the $397 monthly price makes sense, would you be open to moving forward?"</div>
+      <div class="say">"We'll look at your website and business, prepare a custom demo, and walk you through it at [day/time]. If it solves the problem and the pricing makes sense, would you be open to moving forward?"</div>
       <div class="say">"If anything comes up and you need to reschedule, that's completely fine. Just let us know. We want to respect your time and our time, so just don't leave us in the dark if something changes. Sound good?"</div>
 
       <h2>Confirming the appointment</h2>
@@ -1626,28 +1638,30 @@ h3{font-size:17px;letter-spacing:-.025em}
   var roiPeriod = document.getElementById('roi-period');
   var roiTicket = document.getElementById('roi-ticket');
   var roiError = document.getElementById('roi-error');
+  var roiPrompt = document.getElementById('roi-prompt');
   var dollars = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
   var quantity = new Intl.NumberFormat('en-US',{maximumFractionDigits:1});
   function setRoi(id,value){ document.getElementById(id).textContent=value; }
   function updateRoi(){
+    var hasCalls = roiCalls.value !== '', hasTicket = roiTicket.value !== '';
     var calls = Number(roiCalls.value), ticket = Number(roiTicket.value);
-    var valid = roiCalls.value !== '' && roiTicket.value !== '' &&
-      Number.isFinite(calls) && Number.isFinite(ticket) && calls >= 0 && ticket > 0;
-    roiError.hidden = valid;
+    var valid = hasCalls && hasTicket && Number.isFinite(calls) && Number.isFinite(ticket) && calls >= 0 && ticket > 0;
+    roiPrompt.hidden = hasCalls || hasTicket;
+    roiError.hidden = valid || (!hasCalls && !hasTicket);
     if(!valid){
       ['roi-monthly','roi-customers','roi-revenue','roi-multiple','roi-breakeven'].forEach(function(id){setRoi(id,'—');});
       return;
     }
     var factor = roiPeriod.value === 'day' ? 30 : roiPeriod.value === 'week' ? 52/12 : 1;
     var monthly = calls * factor;
-    var lowCustomers = monthly * 0.20, highCustomers = monthly * 0.30;
+    var lowCustomers = monthly * .20, highCustomers = monthly * .30;
     var lowRevenue = lowCustomers * ticket, highRevenue = highCustomers * ticket;
     var breakEven = Math.ceil(397 / ticket);
     setRoi('roi-monthly',quantity.format(monthly));
     setRoi('roi-customers',quantity.format(lowCustomers)+'–'+quantity.format(highCustomers));
     setRoi('roi-revenue',dollars.format(lowRevenue)+'–'+dollars.format(highRevenue));
-    setRoi('roi-multiple',(lowRevenue/397).toFixed(1)+'–'+(highRevenue/397).toFixed(1)+'×');
-    setRoi('roi-breakeven','At a '+dollars.format(ticket)+' average sale, '+breakEven+' additional '+(breakEven===1?'customer':'customers')+' would cover the $397 monthly fee in gross sales. Further sales add gross revenue before service costs.');
+    setRoi('roi-multiple','~'+Math.floor(lowRevenue/397)+'–'+Math.ceil(highRevenue/397)+'×');
+    setRoi('roi-breakeven',breakEven+' additional '+(breakEven===1?'customer':'customers')+' at '+dollars.format(ticket)+' each would cover the $397 monthly fee in gross sales. Further sales add gross revenue before service costs.');
   }
   [roiCalls,roiPeriod,roiTicket].forEach(function(el){ el.addEventListener('input',updateRoi); el.addEventListener('change',updateRoi); });
   updateRoi();
